@@ -1,0 +1,10 @@
+--- 
+ - hosts: servers
+   become: yes
+   vars:
+      - pn: nginx
+   tasks:
+     - name: install nginx 
+       apt: name='{{pn}}' state=present
+     - name: start nginx 
+       service: name='{{pn}}' state=started

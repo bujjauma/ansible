@@ -1,0 +1,8 @@
+--- 
+ - hosts: servers
+   become: yes
+   tasks:
+     - name: print numbers only if condition is true
+       raw: echo "{{item}}"
+       whit_items: [0,2,4,6,8,10,12]
+       when: item > 5

@@ -1,0 +1,6 @@
+---
+- hosts: servers
+  become: yes
+  roles:
+    - {role: dev, when: ansible_os_family == "ubuntu"}
+    - {role: build, when: ansible_os_family == "centos"}

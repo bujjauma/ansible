@@ -1,0 +1,10 @@
+--- 
+ - hosts: servers
+   become: yes
+   tasks:
+     - name: install nginx 
+       apt: name=nginx state=present
+     - name: print task 
+       raw: echo hi-students
+       register: output
+     - debug: var=output

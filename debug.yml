@@ -1,0 +1,12 @@
+--- 
+ - hosts: servers
+   become: yes
+   tasks:
+     - name: print task1 
+       raw: echo hi-uma
+       register: output1
+     - name: print task2 
+       raw: echo hi-students
+       register: output2
+     - debug: var=output1
+     - debug: var=output2

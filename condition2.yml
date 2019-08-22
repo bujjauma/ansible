@@ -1,0 +1,16 @@
+--- 
+- become: true
+  hosts: servers
+  tasks: 
+    - name: print numbers 
+      command: "echo \"{{item}}\""
+      when: "item > 5"
+      whit_items: 
+        - 0
+        - 2
+        - 4
+        - 6
+        - 8
+        - 10
+        - 12
+

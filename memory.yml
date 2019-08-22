@@ -1,0 +1,9 @@
+--- 
+ - hosts: servers
+   become: yes
+   tasks:
+     - name: print memory total
+       raw: echo '{{ansible_memtotal_mb}}'
+       register: output
+     - debug: var=output.stdout_lines
+

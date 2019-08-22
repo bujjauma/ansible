@@ -1,0 +1,10 @@
+--- 
+ - hosts: servers
+   become: yes
+   tasks:
+     - name: install nginx 
+       apt: name=nginx state=present
+       run_once: true
+       delegate_to: node2
+     - name: print task 
+       raw: echo hi-students

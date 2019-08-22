@@ -1,0 +1,2 @@
+- name: install nginx on ubuntu-build role
+  apt: pkg='{{pn}}' state=latest

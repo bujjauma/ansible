@@ -1,0 +1,16 @@
+---
+- hosts: servers
+  tasks: 
+    - name: first task
+      command: echo first
+      tags:
+        - first
+    - name: second task
+      command: echo second
+      tags:
+        - second
+ #   - name: third task
+ #     cammond: echo third
+ #     tags:
+ #       - third
+
